@@ -6,7 +6,9 @@ const dbURI = process.env.MONGO_CON_STRING || ''
 
 const options = {
   reconnectTries: Number.MAX_VALUE,
-  poolSize: 10
+  poolSize: 10,
+  useNewUrlParser: true,
+  useCreateIndex: true
 }
 
 connect(dbURI, options)
