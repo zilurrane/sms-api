@@ -3,6 +3,6 @@ import { createNewUser, listAllUsers } from '../controllers/userController'
 
 const routes = Router()
 
-routes.get('/getAll', listAllUsers).post('/create', createNewUser)
+routes.get('/getall', listAllUsers).post('/create', createNewUser)
 
 export default routes
