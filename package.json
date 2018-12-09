@@ -5,12 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run build:watch\" \"npm run start:watch\"",
-    "start": "node dist/index.js",
-    "start:watch": "nodemon dist/index.js",
+    "start": "node -r dotenv/config dist/index.js",
+    "start:watch": "nodemon -r dotenv/config dist/index.js",
     "build": "tsc",
-    "build:watch": "tsc -w",
-    "lint": "standard \"src/**/*.ts\"",
-    "code-format": "standard \"src/**/*.ts\" --fix"
+    "build:watch": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -29,14 +27,27 @@
   },
   "homepage": "https://github.com/zilurrane/sms-api#readme",
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.3.14",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/express": "^4.16.0",
+    "@types/jsonwebtoken": "^8.3.0",
+    "@types/mongodb": "^3.1.15",
+    "@types/mongoose": "^5.3.2",
+    "@types/passport": "^0.4.7",
+    "@types/passport-jwt": "^3.0.1",
     "concurrently": "^4.1.0",
+    "dotenv": "^6.2.0",
     "nodemon": "^1.18.7",
     "standard": "^12.0.1",
-    "typescript": "^3.2.1"
+    "typescript": "~3.1.0"
   }
 }
