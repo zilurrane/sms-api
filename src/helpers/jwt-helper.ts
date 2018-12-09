@@ -7,7 +7,7 @@ const opts = {
 }
 
 export const jwtStrategy = new Strategy(opts, (jwt_payload: any, done: any) => {
-    User.findOne({ username: jwt_payload.username }, (err, user) => {
+    User.findOne({ email: jwt_payload.email }, (err, user) => {
         if (err) {
             return done(err, false)
         }
