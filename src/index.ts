@@ -4,7 +4,6 @@ import routes from './routes/indexRoutes'
 require('./configs/db')
 
 const app = express()
-
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
